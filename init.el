@@ -4,10 +4,10 @@
              ;'("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
 	     '("melpa" . "http://melpa.org/packages/"))
 
-(add-to-list 'package-archives
-          '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
+;(add-to-list 'package-archives
+;          '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 
-(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
+;(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 
 ;(add-to-list 'package-archives
 ;	     '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -197,7 +197,7 @@
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (leuven)))
+ '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
     ("4f5bb895d88b6fe6a983e63429f154b8d939b4a8c581956493783b2515e22d6d" "12b4427ae6e0eef8b870b450e59e75122d5080016a9061c9696959e50d578057" "ad950f1b1bf65682e390f3547d479fd35d8c66cafa2b8aa28179d78122faa947" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "f0d8af755039aa25cd0792ace9002ba885fd14ac8e8807388ab00ec84c9497d7" "05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
@@ -232,7 +232,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (sublimity minimap ample-theme monokai-theme grandshell-theme solarized-theme god-mode smex nim-mode paradox jquery-doc paredit-everywhere skewer-mode js2-refactor js3-mode js2-mode slime icicles edit-server company smartparens rainbow-delimiters el-get iedit ggtags paredit ac-cider cider clojure-mode projectile)))
+    (nodejs-repl sublimity minimap ample-theme monokai-theme grandshell-theme solarized-theme god-mode smex nim-mode paradox jquery-doc paredit-everywhere skewer-mode js2-refactor js3-mode js2-mode slime icicles edit-server company smartparens rainbow-delimiters el-get iedit ggtags paredit ac-cider cider clojure-mode projectile)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(show-paren-mode t)
