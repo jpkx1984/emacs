@@ -202,6 +202,9 @@
    (quote
     ("4f5bb895d88b6fe6a983e63429f154b8d939b4a8c581956493783b2515e22d6d" "12b4427ae6e0eef8b870b450e59e75122d5080016a9061c9696959e50d578057" "ad950f1b1bf65682e390f3547d479fd35d8c66cafa2b8aa28179d78122faa947" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "f0d8af755039aa25cd0792ace9002ba885fd14ac8e8807388ab00ec84c9497d7" "05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(electric-indent-mode t)
+ '(erc-email-userid "jkrysztofiak@pl.imshealth.com")
+ '(erc-nick "jkrysztofiak")
+ '(erc-user-full-name "Janusz Krysztofiak")
  '(fci-rule-color "#49483E")
  '(highlight-changes-colors ("#FD5FF0" "#AE81FF"))
  '(highlight-symbol-colors
