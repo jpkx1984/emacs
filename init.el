@@ -81,6 +81,14 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; TypeScript
+
+(setq tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t
+										  :insertSpaceAfterCommaDelimiter t
+										  :tabSize 4
+										  :indentSize 4
+										  :convertTabsToSpaces t
+										  :insertSpaceBeforeAndAfterBinaryOperators t
+			    :placeOpenBraceOnNewLineForFunctions nil))
 (add-hook 'typescript-mode-hook
           (lambda ()
             (tide-setup)
