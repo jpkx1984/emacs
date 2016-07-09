@@ -183,6 +183,8 @@
 (add-hook 'paredit-mode-hook
 	  (lambda () (local-set-key (kbd "C-0") 'paredit-forward-slurp-sexp)))
 
+(scroll-bar-mode -1)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
