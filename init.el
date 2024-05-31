@@ -1,3 +1,8 @@
+;(setq url-proxy-services
+;      '(("no_proxy" . "\^\\\\(localhost\\\\|10.\*\\\\)")
+;        ("http" . "127.0.0.1:8118")
+;        ("https" . "127.0.0.1:8118")))
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
@@ -39,8 +44,14 @@
 (evil-set-leader 'normal (kbd "\\"))
 (evil-define-key 'normal 'global (kbd "<leader>fu") 'lsp-find-references)
 (evil-define-key 'normal 'global (kbd "<leader>ss") 'helm-lsp-workspace-symbol)
+(evil-define-key 'normal 'global (kbd "<leader>gi") 'lsp-goto-implementation)
+(evil-define-key 'normal 'global (kbd "<leader>gd") 'lsp-find-declaration)
+(evil-define-key 'normal 'global (kbd "<leader>sp") 'flycheck-list-errors)
+(evil-define-key 'normal 'global (kbd "<leader>rr") 'lsp-rename)
+(evil-define-key 'normal 'global (kbd "<leader>sf") 'project-find-file)
 (evil-define-key 'normal 'global (kbd "=") 'er/expand-region)
 (evil-define-key 'normal 'global (kbd "-") 'er/shrink-region)
+(evil-define-key 'normal 'global (kbd "q") 'kill-this-buffer)
 (evil-mode 1)
 
 ;; ido
@@ -75,8 +86,8 @@
   :commands lsp-ui-mode
   :custom
   (lsp-ui-peek-always-show t)
-  (lsp-ui-sideline-show-hover t)
-  (lsp-ui-doc-enable nil))
+  (lsp-ui-sideline-show-hover nil)
+  (lsp-ui-doc-enable t))
 
 ;; helm
 (require 'helm)
@@ -88,8 +99,10 @@
 ;; global settings
 (tool-bar-mode 1)
 (global-set-key (kbd "<f12>") 'ido-switch-buffer)
-(global-set-key (kbd "ESC <escape>") 'helm-buffers-list)
+(global-set-key (kbd "M-ESC") 'helm-buffers-list)
 (global-set-key (kbd "<f3>")  'next-window-any-frame)
+(global-set-key (kbd "M-<left>")  'previous-window-any-frame)
+(global-set-key (kbd "M-<right>")  'next-window-any-frame)
 
 ;; markdown
 
@@ -97,7 +110,20 @@
 
 ;; Rust
 
-(use-package rustic :ensure)
+(use-package rustic
+  :ensure
+  :bind (:map rustic-mode-map
+	      ("M-j" . lsp-ui-imenu)
+              ("M-?" . lsp-find-references)
+              ;("C-c C-c l" . flycheck-list-errors)
+              ("M-<return>" . lsp-execute-code-action)
+              ;("C-c C-c r" . lsp-rename)
+              ;("C-c C-c q" . lsp-workspace-restart)
+              ;("C-c C-c Q" . lsp-workspace-shutdown)
+              ;("C-c C-c s" . lsp-rust-analyzer-status)
+	      )
+  )
+
 ;; (use-package rust-mode
 ;;   :init
 ;;   (setq rust-mode-treesitter-derive t))
@@ -106,6 +132,11 @@
 (add-hook 'rust-mode-hook
 	  (lambda () (setq indent-tabs-mode nil)))
 
+
+(use-package lsp-mode
+  :ensure
+  :custom
+    (lsp-inlay-hint-enable nil))
 (setq lsp-rust-analyzer-cargo-watch-command "clippy")
 
 ;; csharp
