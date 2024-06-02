@@ -51,7 +51,11 @@
 (evil-define-key 'normal 'global (kbd "<leader>sf") 'project-find-file)
 (evil-define-key 'normal 'global (kbd "=") 'er/expand-region)
 (evil-define-key 'normal 'global (kbd "-") 'er/shrink-region)
-(evil-define-key 'normal 'global (kbd "q") 'kill-this-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>q") 'kill-buffer-and-window)
+(evil-define-key 'normal 'global (kbd "<leader>0") 'delete-window)
+(evil-define-key 'normal 'global (kbd "<leader>1") 'delete-other-windows)
+(evil-define-key 'normal 'global (kbd "<leader>3") 'split-window-right)
+(evil-define-key 'normal 'global (kbd "<leader>2") 'split-window-below)
 (evil-mode 1)
 
 ;; ido
@@ -116,7 +120,7 @@
 	      ("M-j" . lsp-ui-imenu)
               ("M-?" . lsp-find-references)
               ;("C-c C-c l" . flycheck-list-errors)
-              ("M-<return>" . lsp-execute-code-action)
+              ("M-RET" . lsp-execute-code-action)
               ;("C-c C-c r" . lsp-rename)
               ;("C-c C-c q" . lsp-workspace-restart)
               ;("C-c C-c Q" . lsp-workspace-shutdown)
